@@ -1,1 +1,41 @@
-                      
+<!-- <div class="parent">
+ <div class="sign">
+    <a [routerLink]="['/sigin']">SIGNUP</a> 
+ </div>
+ <div class="login">
+    <a [routerLink]="['/login']">LOGIN</a> 
+ </div>
+</div>
+  -->
+<div class="mainParent">
+   <h1>Whats Up****</h1>
+   <div class="parent">
+   <ul class="list">
+      <li><a [routerLink]="['/home']" class="sign">HOME</a></li>
+      <li><a [routerLink]="['/menu']" class="sign">MENU</a></li>
+      <li><a [routerLink]="['/service']" class="sign">SERVICE</a></li>
+      <li><a [routerLink]="['/about']" class="sign">ABOUT</a></li>
+      <li> <a [routerLink]="['/sigin']" class="sign">SIGNUP</a></li>
+      <li><a [routerLink]="['/login']" class="login">LOGIN</a></li>
+    </ul>
+   </div>
+   <label class="hoverable" >
+      <img  [src]="imageUrl" >
+    </label>
+
+</div>
+ 
+<!-- <app-login (loginData)="loginData($event)"></app-login> -->
+<!-- <div class="imgParent">
+   <div class="text">
+      <h1>Hello  EVERY ONE I Am Using Whats Up</h1>
+      <img src="../assets/imgs/smily.PNG" alt="">
+   </div>
+   <img src="../assets//imgs/computer.PNG" alt="">
+</div> -->
+<!-- <div class="homeImg">
+   <img src="https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg" alt="">
+</div> -->
+
+
+<router-outlet></router-outlet>

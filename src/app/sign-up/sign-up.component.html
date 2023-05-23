@@ -1,0 +1,82 @@
+<section class="h-100 bg-dark">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col">
+          <div class="card card-registration my-4">
+            <div class="row g-0">
+              <div class="col-xl-6 d-none d-xl-block">
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img4.webp"
+                  alt="Sample photo" class="img-fluid"
+                  style="border-top-left-radius: .25rem; border-bottom-left-radius: .25rem;" />
+              </div>
+              <div class="col-xl-6">
+                <div class="card-body p-md-5 text-black">
+                    <form [formGroup]="signupForm" >
+                  <h3 class="mb-5 text-uppercase"> SignUp form</h3>
+                  <div class="row">
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1m" class="form-control form-control-lg" formControlName="firstName"/>
+                        <label class="form-label" for="form3Example1m">First name</label>
+                        <div  class="red"   *ngIf="signupForm.controls.firstName.invalid && (signupForm.controls.firstName.dirty || signupForm.controls.firstName.touched)">
+                          <span>firstName is required</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                      <div class="form-outline">
+                        <input type="text" id="form3Example1n" class="form-control form-control-lg" formControlName="lastName"/>
+                        <label class="form-label" for="form3Example1n">Last name</label>
+                        <div  class="red"   *ngIf="signupForm.controls.lastName.invalid && (signupForm.controls.lastName.dirty || signupForm.controls.lastName.touched)">
+                          <span>Lastname is required</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example97" class="form-control form-control-lg" formControlName="email"/>
+                    <label class="form-label" for="form3Example97">Email ID</label>
+                    <div   class="red"   *ngIf="signupForm.controls.email.invalid && (signupForm.controls.email.dirty || signupForm.controls.email.touched)">
+                      <span>Email ID is required</span>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example90" class="form-control form-control-lg" formControlName="passowrd"/>
+                    <label class="form-label" for="form3Example90">Passowrd</label>
+                    <div  class="red"   *ngIf="signupForm.controls.passowrd.invalid && (signupForm.controls.passowrd.dirty || signupForm.controls.passowrd.touched)">
+                      <span>Passowrd is required</span>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <input type="text" id="form3Example99" class="form-control form-control-lg" formControlName="ConformPassowrd"/>
+                    <label class="form-label" for="form3Example99">Conform Passowrd</label>
+                  </div>
+                  <div class="red" *ngIf="signupForm.controls.passowrd.value != signupForm.controls.ConformPassowrd.value">
+                    <span>Passowrd must be same !!!!</span>
+                  </div>
+                   
+                 
+                  <!-- <input #Image type="file" (change)="handleFileInput($event)" formControlName="signImg" /> -->
+                
+                  <div class="avatar-edit">
+                    <input type='file' id="fileInput" accept=".png, .jpg, .jpeg"  (change)="uploadFile($event)" formControlName="signImg" />
+                  </div>
+                  {{signupForm.valid}}
+                  <div class="d-flex justify-content-end pt-3">
+                    <button type="button" class="btn btn-light btn-lg">Reset all</button>
+                    <button type="button" class="btn btn-warning btn-lg ms-2" [disabled]="signupForm.invalid" (click)="onSubmit()">Submit form</button>
+                  </div>
+                </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<button (click)="yes()">yes</button>
+
+<label class="hoverable" #fileInput>
+  <img  [src]="imageUrl" >
+</label>

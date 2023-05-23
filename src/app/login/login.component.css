@@ -1,0 +1,15 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+.img{
+    width: 40%;
+    height: 80%;
+    /* text-align: center; */
+    padding: 127px 20px 10px 19px;
+    margin: 4px 3px 10px 267px;
+
+}
