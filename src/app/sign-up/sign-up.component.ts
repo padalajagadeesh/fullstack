@@ -41,6 +41,7 @@ export class SignUpComponent {
       if (this.signupForm.status === "VALID") {
         console.log('999')
         this.signUpService.signMethod(this.signupForm.value)
+        this.signUpService.imgUrl(this.imageUrl)
         console.log(this.data, '55', this.signupForm.value)
         
       }
@@ -79,6 +80,6 @@ export class SignUpComponent {
       this.imageUrl = reader.result;
      console.log(this.imageUrl)
     }
-  localStorage.setItem('IMGURL', JSON.stringify(this.imageUrl))
+  localStorage.setItem('IMGURL', this.imageUrl)
   }
 }

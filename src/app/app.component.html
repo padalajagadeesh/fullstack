@@ -11,9 +11,10 @@
    <h1>Whats Up****</h1>
    <div class="parent">
    <ul class="list">
+      <button [disabled]="!loginMainValue">HIII</button>
       <li><a [routerLink]="['/home']" class="sign">HOME</a></li>
-      <li><a [routerLink]="['/menu']" class="sign">MENU</a></li>
-      <li><a [routerLink]="['/service']" class="sign">SERVICE</a></li>
+      <li><a [routerLink]="['/menu']"  class="sign">MENU</a></li>
+      <li><a [routerLink]="['/service']"  class="sign">SERVICE</a></li>
       <li><a [routerLink]="['/about']" class="sign">ABOUT</a></li>
       <li> <a [routerLink]="['/sigin']" class="sign">SIGNUP</a></li>
       <li><a [routerLink]="['/login']" class="login">LOGIN</a></li>

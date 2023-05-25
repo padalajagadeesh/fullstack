@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ServerService } from '../server.service';
 
 @Component({
   selector: 'app-home',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
+imageUrl: any;
 
+constructor(private signUpService:ServerService){}
+ngOnInit(){
+  this.imageUrl= this.signUpService.imgUrlOut()
+  console.log(this.imageUrl,'99')
+  
+}
+  
 }

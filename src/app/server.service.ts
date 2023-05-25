@@ -10,6 +10,8 @@ import { SignData } from '../assets/shared/signData'
 export class ServerService {
   data:any=[]
   signUpDeatils: any=[];
+  newImg: any;
+  loginValue: boolean = false;
   constructor(private route:Router,private https: HttpClient) { 
 
   }
@@ -67,6 +69,17 @@ deleteSignData(id:any): Observable<SignData>{
   .delete<SignData>(this.apiURL + '/posts/' + id, this.httpOptions)
 }
 
+
+
+imgUrl(data:any){
+console.log(data,'71')
+this.newImg =data
+}
+
+imgUrlOut(){
+  return this.newImg
+}
+
    // Error handling
    handleError(error: any) {
     let errorMessage = '';
@@ -83,5 +96,14 @@ deleteSignData(id:any): Observable<SignData>{
     });
   }
 
+  logOut(){
+    setTimeout(()=>{
+      this.route.navigate(['/login'])
+    },2000)
+  }
 
+  logInValueFromLogin(){
+this.loginValue =true
+console.log(this.loginValue,'999999')
+  }
 }

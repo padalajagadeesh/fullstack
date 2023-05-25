@@ -21,6 +21,7 @@ export class LoginComponent {
   dummyData: [] | undefined;
   dataArray: any=[];
   arr:any
+  imageUrl: any;
   // @Output() loginData = new EventEmitter();
   constructor(private signUpService: ServerService, private route: Router, private fb: FormBuilder) {
 
@@ -33,6 +34,7 @@ export class LoginComponent {
     this.dataArray = localStorage.getItem('signUp*&') || []
   console.log(this.dataArray,'88')
   this.arr = JSON.parse(this.dataArray)
+
   }
   login() {
       this.arr.forEach((v:any)=>{
@@ -40,7 +42,7 @@ export class LoginComponent {
           console.log('sucee')
           this.working =true
           setTimeout(()=>{
-            this.route.navigate(['menu'])
+            this.route.navigate(['home'])
           },3000)
         }
         console.log(v,'12')
@@ -66,6 +68,7 @@ export class LoginComponent {
     // })
 
 // this.loginData.emit(this.loginForm)
+  this.signUpService.logInValueFromLogin()
   }
 
 
